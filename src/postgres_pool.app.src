@@ -1,0 +1,23 @@
+{application, postgres_pool,
+ [
+  {description, "postgresql connection pool for hivespark."},
+  {vsn, "1.0"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { postgres_pool_app, []}},
+  {env, [
+        {pools, [
+            {pool1, [
+                {size, 20},
+                {max_overflow, 20},
+                {hostname, "127.0.0.1"},
+                {database, "template1"},
+                {username, "postgres"},
+                {password, ""}
+            ]}
+       ]}
+    ]}
+ ]}.
